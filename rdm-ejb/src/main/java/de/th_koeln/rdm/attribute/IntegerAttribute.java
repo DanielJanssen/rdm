@@ -31,6 +31,9 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	@Deprecated
 	protected IntegerAttribute(Integer aValue) {
 		super();
+		if (!isValid(aValue)) {
+			throw new IllegalArgumentException("Value " + aValue + " is not valid");
+		}
 		value = aValue;
 	}
 
@@ -39,7 +42,7 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 		return value;
 	}
 
-	protected Boolean isValid() {
+	protected Boolean isValid(@SuppressWarnings("unused") Integer aValue) {
 		return Boolean.TRUE;
 	}
 
@@ -66,4 +69,5 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 		}
 		return true;
 	}
+
 }
