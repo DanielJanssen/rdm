@@ -1,5 +1,6 @@
 package de.th_koeln.rdm.attribute;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -7,11 +8,11 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public abstract class IntegerAttribute extends Attribute<Integer> {
+public abstract class BigDecimalAttribute extends Attribute<BigDecimal> {
 	private static final long serialVersionUID = 1L;
 
 	@Column
-	Integer value;
+	BigDecimal value;
 
 	/*
 	 * @deprecated
@@ -19,7 +20,7 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
-	protected IntegerAttribute() {
+	protected BigDecimalAttribute() {
 		super();
 	}
 
@@ -29,7 +30,7 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
-	protected IntegerAttribute(Integer aValue) {
+	protected BigDecimalAttribute(BigDecimal aValue) {
 		super();
 		if (!isValid(aValue)) {
 			throw new IllegalArgumentException("Value " + aValue + " is not valid");
@@ -38,11 +39,11 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	}
 
 	@Override
-	public Integer getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	protected Boolean isValid(@SuppressWarnings("unused") Integer aValue) {
+	protected Boolean isValid(@SuppressWarnings("unused") BigDecimal aValue) {
 		return Boolean.TRUE;
 	}
 
@@ -55,11 +56,11 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	}
 
 	protected NumberFormat getNumberFormat() {
-		return new DecimalFormat("0");
+		return new DecimalFormat("0.00");
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<Integer> anAttribute) {
+	public boolean equalsValue(Attribute<BigDecimal> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;
