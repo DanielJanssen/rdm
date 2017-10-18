@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="rdm-ejb">
+		<jta-data-source>jboss/DataSource/mysqlrdm</jta-data-source>
+		<class>de.th_koeln.rdm.attribute.BigDecimalAttribute</class>
+		<class>de.th_koeln.rdm.attribute.DateAttribute</class>
 		<class>de.th_koeln.rdm.attribute.IntegerAttribute</class>
+		<class>de.th_koeln.rdm.attribute.StringAttribute</class>
+		<class>de.th_koeln.rdm.attribute.UuidAttribute</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
 	</persistence-unit>
 </persistence>

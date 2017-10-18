@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
-public class DateAttribute extends Attribute<Date> {
+@Embeddable
+public abstract class DateAttribute extends Attribute<Date> {
 
 	private static final long serialVersionUID = 1L;
 	@Column

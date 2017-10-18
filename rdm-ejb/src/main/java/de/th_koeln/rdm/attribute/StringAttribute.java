@@ -1,8 +1,10 @@
 package de.th_koeln.rdm.attribute;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
-public class StringAttribute extends Attribute<String> {
+@Embeddable
+public abstract class StringAttribute extends Attribute<String> {
 
 	private static final long serialVersionUID = 1L;
 	@Column

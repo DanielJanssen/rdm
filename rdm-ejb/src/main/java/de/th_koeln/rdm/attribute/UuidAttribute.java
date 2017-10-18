@@ -1,6 +1,11 @@
 package de.th_koeln.rdm.attribute;
 
-public class UuidAttribute extends StringAttribute {
+import javax.persistence.Embeddable;
+
+@Embeddable
+public abstract class UuidAttribute extends StringAttribute {
+
+	private static final long serialVersionUID = 1L;
 
 	/*
 	 * @deprecated
