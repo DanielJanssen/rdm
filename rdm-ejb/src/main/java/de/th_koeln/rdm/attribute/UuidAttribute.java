@@ -1,7 +1,9 @@
 package de.th_koeln.rdm.attribute;
 
 import javax.persistence.Embeddable;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 @Embeddable
 public abstract class UuidAttribute extends StringAttribute {
 

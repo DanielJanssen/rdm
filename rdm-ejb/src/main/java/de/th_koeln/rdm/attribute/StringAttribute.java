@@ -2,7 +2,9 @@ package de.th_koeln.rdm.attribute;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 @Embeddable
 public abstract class StringAttribute extends Attribute<String> {
 

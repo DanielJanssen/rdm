@@ -8,7 +8,9 @@ import java.util.GregorianCalendar;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 @Embeddable
 public abstract class DateAttribute extends Attribute<Date> {
 

@@ -5,7 +5,9 @@ import java.text.NumberFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
 @Embeddable
 public abstract class IntegerAttribute extends Attribute<Integer> {
 	private static final long serialVersionUID = 1L;
