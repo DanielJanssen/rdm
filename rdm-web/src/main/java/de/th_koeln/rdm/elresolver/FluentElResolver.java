@@ -55,7 +55,6 @@ public class FluentElResolver extends BeanELResolver {
 
 	private boolean isFluentWriteMethod(Method method, ELContext context, Object base, String property) {
 		String suffix = Character.toUpperCase(property.charAt(0)) + property.substring(1);
-		// TODO rt57, 03.11.2017: String.class oder auf den Typen zugreifen?
 		return method.getName().endsWith(suffix) && method.getParameterTypes().length == 1 && method.getParameterTypes()[0] == getType(context, base, property);
 	}
 

@@ -7,6 +7,7 @@
 	</parent>
 	<artifactId>rdm-web</artifactId>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>org.primefaces</groupId>
