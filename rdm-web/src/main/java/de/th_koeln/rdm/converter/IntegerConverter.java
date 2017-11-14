@@ -8,7 +8,7 @@ import de.th_koeln.rdm.attribute.IntegerAttribute;
 public class IntegerConverter extends AttributeConverter<Integer> {
 
 	@Override
-	Integer toConstructorParameterValue(String aValue) {
+	Integer toFromValueParameterValue(String aValue) {
 		if (aValue == null) {
 			return null;
 		}
@@ -16,7 +16,7 @@ public class IntegerConverter extends AttributeConverter<Integer> {
 	}
 
 	@Override
-	Class<?> getConstructorParameterClass() {
+	Class<?> getFromValueParameterClass() {
 		return Integer.class;
 	}
 }

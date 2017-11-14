@@ -8,12 +8,12 @@ import de.th_koeln.rdm.attribute.StringAttribute;
 public class StringConverter extends AttributeConverter<String> {
 
 	@Override
-	String toConstructorParameterValue(String aValue) {
+	String toFromValueParameterValue(String aValue) {
 		return aValue;
 	}
 
 	@Override
-	Class<?> getConstructorParameterClass() {
+	Class<?> getFromValueParameterClass() {
 		return String.class;
 	}
 }

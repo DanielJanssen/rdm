@@ -12,33 +12,44 @@ import de.th_koeln.rdm.attribute.Attribute;
 
 public abstract class AttributeConverter<T> implements Converter {
 
-	abstract T toConstructorParameterValue(String aValue);
+	abstract T toFromValueParameterValue(String aValue);
 
-	abstract Class<?> getConstructorParameterClass();
+	abstract Class<?> getFromValueParameterClass();
 
 	@Override
-	public String getAsString(@SuppressWarnings("unused") FacesContext aContext, @SuppressWarnings("unused") UIComponent aComponent, Object aValue)
-			throws ConverterException {
+	public String getAsString(@SuppressWarnings("unused") FacesContext aContext, @SuppressWarnings("unused") UIComponent aComponent, Object aValue) {
 		Attribute<?> value = (Attribute<?>) aValue;
 		return value.toString();
 	}
 
 	@Override
-	public Object getAsObject(FacesContext aContext, UIComponent aComponent, String aValue) throws ConverterException {
+	public Object getAsObject(FacesContext aContext, UIComponent aComponent, String aValue) {
+		Object value = getValue(aValue);
+		Class<?> concreteClass = getConcreteClass(aContext, aComponent);
+		return createObject(value, concreteClass);
+	}
+
+	private Object getValue(String aValue) {
 		Object value;
 		try {
-			value = toConstructorParameterValue(aValue);
+			value = toFromValueParameterValue(aValue);
 		} catch (NumberFormatException e) {
 			throw new ConverterException("Only a number is allowed");
 		}
+		return value;
+	}
 
+	private Class<?> getConcreteClass(FacesContext aContext, UIComponent aComponent) {
 		ValueExpression expression = aComponent.getValueExpression("value");
-		Class<?> classToBeCreated = expression.getType(aContext.getELContext());
+		return expression.getType(aContext.getELContext());
+	}
+
+	private Object createObject(Object value, Class<?> concreteClass) {
 		try {
-			Method method = classToBeCreated.getMethod("fromValue", getConstructorParameterClass());
+			Method method = concreteClass.getMethod("fromValue", getFromValueParameterClass());
 			return method.invoke(null, value);
 		} catch (ReflectiveOperationException e) {
-			throw new RuntimeException("Static Method forValue() is needed to create a " + classToBeCreated.getSimpleName(), e);
+			throw new ConverterException("Static Method forValue() is needed to create a " + concreteClass.getSimpleName(), e);
 		}
 	}
 }
