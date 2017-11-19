@@ -19,13 +19,13 @@ public abstract class Attribute<T extends Comparable<T>> implements Serializable
 		return Boolean.FALSE;
 	}
 
-	public boolean isGreaterThan(Attribute<T> anAttribute) {
-		return compareTo(anAttribute) > 0;
-	}
-
 	@Override
 	public int compareTo(Attribute<T> aSimpleValueObject) {
 		return ObjectUtils.compare(getValue(), aSimpleValueObject.getValue());
+	}
+
+	public boolean isGreaterThan(Attribute<T> anAttribute) {
+		return compareTo(anAttribute) > 0;
 	}
 
 	@Override
