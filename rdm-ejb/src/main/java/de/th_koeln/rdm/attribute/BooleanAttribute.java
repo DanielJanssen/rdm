@@ -60,7 +60,7 @@ public abstract class BooleanAttribute extends Attribute<Boolean> {
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<Boolean> anAttribute) {
+	public Boolean equalsValue(Attribute<Boolean> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;

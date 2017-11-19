@@ -61,7 +61,7 @@ public abstract class BigDecimalAttribute extends Attribute<BigDecimal> {
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<BigDecimal> anAttribute) {
+	public Boolean equalsValue(Attribute<BigDecimal> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;

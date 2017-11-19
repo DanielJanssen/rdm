@@ -60,7 +60,7 @@ public abstract class ShortAttribute extends Attribute<Short> {
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<Short> anAttribute) {
+	public Boolean equalsValue(Attribute<Short> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;

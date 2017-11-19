@@ -60,7 +60,7 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<Integer> anAttribute) {
+	public Boolean equalsValue(Attribute<Integer> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;

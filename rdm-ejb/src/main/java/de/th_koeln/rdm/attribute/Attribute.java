@@ -10,7 +10,7 @@ public abstract class Attribute<T extends Comparable<T>> implements Serializable
 
 	public abstract T getValue();
 
-	public abstract boolean equalsValue(Attribute<T> anAttribute);
+	public abstract Boolean equalsValue(Attribute<T> anAttribute);
 
 	public boolean isNullOrEmpty() {
 		if (getValue() == null || getValue().toString().isEmpty()) {

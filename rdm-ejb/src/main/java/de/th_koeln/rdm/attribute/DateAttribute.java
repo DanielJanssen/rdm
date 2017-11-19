@@ -99,7 +99,7 @@ public abstract class DateAttribute extends Attribute<Date> {
 	}
 
 	@Override
-	public boolean equalsValue(Attribute<Date> anAttribute) {
+	public Boolean equalsValue(Attribute<Date> anAttribute) {
 		if (getValue() == null) {
 			if (anAttribute.getValue() != null) {
 				return false;
