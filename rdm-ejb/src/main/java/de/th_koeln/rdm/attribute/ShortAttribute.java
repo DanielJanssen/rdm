@@ -28,7 +28,6 @@ public abstract class ShortAttribute extends Attribute<Short> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected ShortAttribute(Short aValue) {

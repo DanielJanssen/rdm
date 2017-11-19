@@ -28,7 +28,6 @@ public abstract class BooleanAttribute extends Attribute<Boolean> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected BooleanAttribute(Boolean aValue) {

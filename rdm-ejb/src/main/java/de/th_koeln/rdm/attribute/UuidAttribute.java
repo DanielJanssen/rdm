@@ -22,7 +22,6 @@ public abstract class UuidAttribute extends StringAttribute {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected UuidAttribute(String aValue) {

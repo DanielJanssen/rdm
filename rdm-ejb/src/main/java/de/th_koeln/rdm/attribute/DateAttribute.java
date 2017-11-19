@@ -31,7 +31,6 @@ public abstract class DateAttribute extends Attribute<Date> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected DateAttribute(Date aValue) {

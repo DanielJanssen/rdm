@@ -28,7 +28,6 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected IntegerAttribute(Integer aValue) {

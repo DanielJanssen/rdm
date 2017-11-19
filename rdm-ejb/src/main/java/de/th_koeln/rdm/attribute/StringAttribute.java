@@ -25,7 +25,6 @@ public abstract class StringAttribute extends Attribute<String> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected StringAttribute(String aValue) {

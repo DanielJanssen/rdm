@@ -29,7 +29,6 @@ public abstract class BigDecimalAttribute extends Attribute<BigDecimal> {
 	/*
 	 * @deprecated
 	 * Use fromValue()-method from your concreteAttribute;
-	 * JPA needs an protected/public non argument constructor
 	 */
 	@Deprecated
 	protected BigDecimalAttribute(BigDecimal aValue) {
