@@ -35,6 +35,11 @@ public abstract class StringAttribute extends Attribute<String> {
 		value = aValue;
 	}
 
+	@Override
+	public String getValue() {
+		return value;
+	}
+
 	protected Boolean isValid(@SuppressWarnings("unused") String aValue) {
 		return Boolean.TRUE;
 	}
@@ -45,11 +50,6 @@ public abstract class StringAttribute extends Attribute<String> {
 			return "";
 		}
 		return getValue();
-	}
-
-	@Override
-	public String getValue() {
-		return value;
 	}
 
 	@Override

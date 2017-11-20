@@ -1,8 +1,5 @@
 package de.th_koeln.rdm.attribute;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.MappedSuperclass;
@@ -52,11 +49,7 @@ public abstract class BooleanAttribute extends Attribute<Boolean> {
 		if (isNullOrEmpty()) {
 			return "";
 		}
-		return getNumberFormat().format(getValue());
-	}
-
-	protected NumberFormat getNumberFormat() {
-		return new DecimalFormat("0");
+		return getValue().toString();
 	}
 
 	@Override

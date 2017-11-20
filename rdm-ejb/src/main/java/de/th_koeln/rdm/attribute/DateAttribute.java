@@ -45,6 +45,11 @@ public abstract class DateAttribute extends Attribute<Date> {
 		}
 	}
 
+	@Override
+	public Date getValue() {
+		return value;
+	}
+
 	protected Boolean isValid(@SuppressWarnings("unused") Date aValue) {
 		return Boolean.TRUE;
 	}
@@ -59,6 +64,18 @@ public abstract class DateAttribute extends Attribute<Date> {
 
 	protected DateFormat getDateFormat() {
 		return new SimpleDateFormat("yyyy-MM-dd");
+	}
+
+	@Override
+	public Boolean equalsValue(Attribute<Date> anAttribute) {
+		if (getValue() == null) {
+			if (anAttribute.getValue() != null) {
+				return false;
+			}
+		} else if (!getValue().equals(anAttribute.getValue())) {
+			return false;
+		}
+		return true;
 	}
 
 	Date fixDate(Date aDate) {
@@ -91,23 +108,6 @@ public abstract class DateAttribute extends Attribute<Date> {
 		Date today = new Date();
 		today = fixDate(today);
 		return today;
-	}
-
-	@Override
-	public Date getValue() {
-		return value;
-	}
-
-	@Override
-	public Boolean equalsValue(Attribute<Date> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
 	}
 
 }
