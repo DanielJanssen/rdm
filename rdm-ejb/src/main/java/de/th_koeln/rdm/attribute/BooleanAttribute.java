@@ -43,12 +43,4 @@ public abstract class BooleanAttribute extends Attribute<Boolean> {
 	protected Boolean isValid(@SuppressWarnings("unused") Boolean aValue) {
 		return Boolean.TRUE;
 	}
-
-	@Override
-	public String toString() {
-		if (isNullOrEmpty()) {
-			return "";
-		}
-		return getValue().toString();
-	}
 }

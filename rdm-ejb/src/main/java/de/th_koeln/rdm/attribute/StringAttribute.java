@@ -43,12 +43,4 @@ public abstract class StringAttribute extends Attribute<String> {
 	protected Boolean isValid(@SuppressWarnings("unused") String aValue) {
 		return Boolean.TRUE;
 	}
-
-	@Override
-	public String toString() {
-		if (isNullOrEmpty()) {
-			return "";
-		}
-		return getValue();
-	}
 }
