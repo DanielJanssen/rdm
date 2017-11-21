@@ -21,6 +21,14 @@ public abstract class Attribute<T extends Comparable<T>> implements Serializable
 		return compareTo(anAttribute) > 0;
 	}
 
+	public Boolean isLowerThan(Attribute<T> anAttribute) {
+		return compareTo(anAttribute) < 0;
+	}
+
+	public Boolean isEqualsThan(Attribute<T> anAttribute) {
+		return compareTo(anAttribute) == 0;
+	}
+
 	public Boolean isNullOrEmpty() {
 		if (getValue() == null || getValue().toString().isEmpty()) {
 			return Boolean.TRUE;
