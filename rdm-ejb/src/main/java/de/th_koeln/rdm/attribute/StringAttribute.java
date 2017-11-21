@@ -51,17 +51,4 @@ public abstract class StringAttribute extends Attribute<String> {
 		}
 		return getValue();
 	}
-
-	@Override
-	public Boolean equalsValue(Attribute<String> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
-	}
-
 }

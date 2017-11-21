@@ -88,24 +88,24 @@ public class DateAttributeTest {
 	}
 
 	@Test
-	public void testEqualsValueNotEqual() {
+	public void testIsEqualsThanNotEqual() {
 		DateAttribute serviceUnderTest = createDateAttribute(tomorrow());
 		DateAttribute testValue = createDateAttribute(yesterday());
-		assertFalse(serviceUnderTest.equalsValue(testValue));
+		assertFalse(serviceUnderTest.isEqualsThan(testValue));
 	}
 
 	@Test
-	public void testEqualsValueEqual() {
+	public void testIsEqualsThanEqual() {
 		DateAttribute serviceUnderTest = createDateAttribute(new Date());
 		DateAttribute testValue = createDateAttribute(new Date());
-		assertTrue(serviceUnderTest.equalsValue(testValue));
+		assertTrue(serviceUnderTest.isEqualsThan(testValue));
 	}
 
 	@Test
-	public void testEqualsValueNull() {
+	public void testIsEqualsThanNull() {
 		DateAttribute serviceUnderTest = createDateAttribute(new Date());
 		DateAttribute testValue = createDateAttribute();
-		assertFalse(serviceUnderTest.equalsValue(testValue));
+		assertFalse(serviceUnderTest.isEqualsThan(testValue));
 	}
 
 	private Date fixDate() {

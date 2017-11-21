@@ -59,16 +59,4 @@ public abstract class ShortAttribute extends Attribute<Short> {
 		return new DecimalFormat("0");
 	}
 
-	@Override
-	public Boolean equalsValue(Attribute<Short> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
-	}
-
 }

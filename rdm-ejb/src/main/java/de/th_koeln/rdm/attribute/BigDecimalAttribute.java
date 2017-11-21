@@ -59,17 +59,4 @@ public abstract class BigDecimalAttribute extends Attribute<BigDecimal> {
 	protected NumberFormat getNumberFormat() {
 		return new DecimalFormat("0.00");
 	}
-
-	@Override
-	public Boolean equalsValue(Attribute<BigDecimal> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
-	}
-
 }

@@ -66,18 +66,6 @@ public abstract class DateAttribute extends Attribute<Date> {
 		return new SimpleDateFormat("yyyy-MM-dd");
 	}
 
-	@Override
-	public Boolean equalsValue(Attribute<Date> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
-	}
-
 	Date fixDate(Date aDate) {
 		Calendar calendar = new GregorianCalendar();
 		calendar.setTime(aDate);

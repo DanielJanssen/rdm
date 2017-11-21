@@ -10,8 +10,6 @@ public abstract class Attribute<T extends Comparable<T>> implements Serializable
 
 	public abstract T getValue();
 
-	public abstract Boolean equalsValue(Attribute<T> anAttribute);
-
 	@Override
 	public int compareTo(Attribute<T> anAttribute) {
 		return ObjectUtils.compare(getValue(), anAttribute.getValue());

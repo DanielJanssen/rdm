@@ -59,16 +59,4 @@ public abstract class IntegerAttribute extends Attribute<Integer> {
 		return new DecimalFormat("0");
 	}
 
-	@Override
-	public Boolean equalsValue(Attribute<Integer> anAttribute) {
-		if (getValue() == null) {
-			if (anAttribute.getValue() != null) {
-				return false;
-			}
-		} else if (!getValue().equals(anAttribute.getValue())) {
-			return false;
-		}
-		return true;
-	}
-
 }
