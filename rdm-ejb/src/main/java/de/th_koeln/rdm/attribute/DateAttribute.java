@@ -78,18 +78,15 @@ public abstract class DateAttribute extends Attribute<Date> {
 	}
 
 	public Boolean isBeforeToday() {
-		boolean result = today().after(getValue());
-		return result;
+		return today().after(getValue());
 	}
 
 	public Boolean isAfterToday() {
-		boolean result = today().before(getValue());
-		return result;
+		return today().before(getValue());
 	}
 
 	public Boolean isToday() {
-		boolean result = today().equals(getValue());
-		return result;
+		return today().equals(getValue());
 	}
 
 	private Date today() {
@@ -97,5 +94,4 @@ public abstract class DateAttribute extends Attribute<Date> {
 		today = fixDate(today);
 		return today;
 	}
-
 }
