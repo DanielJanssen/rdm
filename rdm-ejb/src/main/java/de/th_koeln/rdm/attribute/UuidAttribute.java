@@ -34,6 +34,6 @@ public abstract class UuidAttribute extends StringAttribute {
 
 	@Override
 	protected Boolean isValid(String aValue) {
-		return aValue.length() == 36;
+		return aValue != null && aValue.length() == 36;
 	}
 }
