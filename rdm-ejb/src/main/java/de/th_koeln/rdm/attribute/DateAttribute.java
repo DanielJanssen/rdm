@@ -9,12 +9,16 @@ import java.util.GregorianCalendar;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @MappedSuperclass
 @Embeddable
 public abstract class DateAttribute extends Attribute<Date> {
 
 	private static final long serialVersionUID = 1L;
+
+	@Temporal(TemporalType.DATE)
 	@Column
 	Date value;
 
