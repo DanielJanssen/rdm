@@ -3,9 +3,13 @@
 	<persistence-unit name="rdm-ejb">
 		<jta-data-source>jboss/DataSource/mysqlrdm</jta-data-source>
 		<class>de.th_koeln.rdm.attribute.BigDecimalAttribute</class>
+		<class>de.th_koeln.rdm.attribute.BooleanAttribute</class>
 		<class>de.th_koeln.rdm.attribute.DateAttribute</class>
 		<class>de.th_koeln.rdm.attribute.IntegerAttribute</class>
+		<class>de.th_koeln.rdm.attribute.ShortAttribute</class>
 		<class>de.th_koeln.rdm.attribute.StringAttribute</class>
+		<class>de.th_koeln.rdm.attribute.TimeAttribute</class>
+		<class>de.th_koeln.rdm.attribute.TimestampAttribute</class>
 		<class>de.th_koeln.rdm.attribute.UuidAttribute</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
