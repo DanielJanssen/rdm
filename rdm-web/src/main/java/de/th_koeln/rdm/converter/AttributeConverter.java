@@ -33,8 +33,8 @@ public abstract class AttributeConverter<T> implements Converter {
 		Object value;
 		try {
 			value = toFromValueParameterValue(aValue);
-		} catch (NumberFormatException e) {
-			throw new ConverterException("Only a number is allowed");
+		} catch (RuntimeException e) {
+			throw new ConverterException("The conversion is not possible.", e);
 		}
 		return value;
 	}
@@ -44,12 +44,12 @@ public abstract class AttributeConverter<T> implements Converter {
 		return expression.getType(aContext.getELContext());
 	}
 
-	private Object createObject(Object value, Class<?> concreteClass) {
+	private Object createObject(Object aValue, Class<?> aConcreteClass) {
 		try {
-			Method method = concreteClass.getMethod("fromValue", getFromValueParameterClass());
-			return method.invoke(null, value);
+			Method method = aConcreteClass.getMethod("fromValue", getFromValueParameterClass());
+			return method.invoke(null, aValue);
 		} catch (ReflectiveOperationException e) {
-			throw new ConverterException("Static Method forValue() is needed to create a " + concreteClass.getSimpleName(), e);
+			throw new ConverterException("Static Method forValue() is needed to create a " + aConcreteClass.getSimpleName(), e);
 		}
 	}
 }
